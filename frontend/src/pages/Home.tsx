@@ -1,4 +1,5 @@
 import { Center, Container, Title } from '@mantine/core';
+import { Communities } from '@widgets/Communities';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -6,13 +7,9 @@ export default function Home() {
 
   return (
     <Center h="100vh">
-      <Container 
-        ta='center'
-        c='orange'
-      >
-        <Title>
-          {t('homePage.greetings')} Я - главная страница!
-        </Title>
+      <Container ta="center">
+        <Title>{t('homePage.greetings')} Я - главная страница!</Title>
+        <Communities />
       </Container>
     </Center>
   );
