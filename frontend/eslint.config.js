@@ -17,6 +17,7 @@ export default tseslint.config([
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
       fsdPlugin.configs.recommended,
+      "plugin:prettier/recommended"
     ],
     languageOptions: {
       ecmaVersion: 2020,
