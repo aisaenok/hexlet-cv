@@ -7,6 +7,7 @@ import { StrictMode } from 'react';
 export const initInertia = () => {
   createInertiaApp({
     resolve: (name) => {
+      console.log('initInertia resolve', name);
       const pages = import.meta.glob('../../../pages/**/*.tsx', { eager: true });
       const page = pages[`../../../pages/${name}.tsx`];
       if (!page) throw new Error(`Page not found: ${name}`);
@@ -14,15 +15,16 @@ export const initInertia = () => {
       return page;
     },
     setup({ el, App, props }) {
+      console.log('initInertia setup', el);
       const root = createRoot(el);
       root.render(
         <StrictMode>
           <UIProvider>
             <I18nProvider>
-              <App { ...props } />
+              <App {...props} />
             </I18nProvider>
           </UIProvider>
-        </StrictMode>
+        </StrictMode>,
       );
     },
   });

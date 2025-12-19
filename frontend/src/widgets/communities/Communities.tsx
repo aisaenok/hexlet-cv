@@ -2,6 +2,7 @@ import { Badge, Button, Container, SimpleGrid, Space, Text, Title } from '@manti
 import { useTranslation } from 'react-i18next';
 import { TelegramLink } from './components/TelegramLink';
 import { openTelegramLink } from './helpers/openTelegramInNewTab';
+import { Link } from '@inertiajs/react';
 
 const TG_USERNAME_HEXLET_CAREER_BOT = 'HexletCareerBot';
 const TG_USERNAME_HEXLET_RU = 'hexlet_ru';
@@ -60,6 +61,7 @@ export const Communities: React.FC = () => {
       >
         {t('communities.action_connect_to')}
       </Button>
+      <Link href="/personal-cabinet">Личный кабинет</Link>
     </Container>
   );
 };
